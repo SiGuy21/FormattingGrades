@@ -18,7 +18,7 @@ myWorkbook.remove(myWorkbook["Sheet"])
 
 
 # 1. Sheets for each class
-sheetNames = ["Algebra", "Calculus", "Trigonometry", "Geometry"]
+sheetNames = ["Algebra", "Calculus", "Trigonometry", "Geometry", "Statistics"]
 
 # Loop through to add sheet if it doesn't exist already
 for sheet in sheetNames:
