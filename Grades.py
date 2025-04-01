@@ -33,6 +33,7 @@ for row in inputSheet.iter_rows(min_row=2, max_col=1, values_only=True):
 
 # 2. last name, first name, student ID, and grade columns
 
+
 # Iterate through the input sheet and add data to the corresponding class sheet
 for row in inputSheet.iter_rows(min_row = 2, values_only=True):
     className = row[0]
