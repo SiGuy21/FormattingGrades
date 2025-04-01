@@ -49,7 +49,12 @@ for row in inputSheet.iter_rows(min_row = 2, values_only=True):
 
 
 # 3. Filter
-pass
+for className, sheet in subject_sheets.items():
+    # Get the maximum row number with data
+    max_row = sheet.max_row
+    # Apply filter to range A1:D{max_row}
+    sheet.auto_filter.ref = f"A1:D{max_row}"
+    print(f"Applied filter to {className} sheet")
 
 # 4. Adding functions 
 pass
