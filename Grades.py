@@ -72,7 +72,26 @@ for className, sheet in subject_sheets.items():
     sheet["G6"] = "=COUNT(D2:D41)"
 
 # 5. Simple formatting
-pass
+for className, sheet in subject_sheets.items():
+    # Boldings
+    # Bold the first row (headers) of Columns A thru D and F thru G
+    # Skip E since it's blank column for spacing
+    for col in range(1, 5):
+        sheet.cell(row = 1, column = col).font = Font(bold = True)
+    for col in range(6, 8):
+        sheet.cell(row = 1, column = col).font = Font(bold = True)
+    
+    # Adjusting widths
+    '''
+    # Hard-coded version
+    column_widths = {"A": 14, "B": 14, "C": 13, "D": 10, "F": 15, "G": 15}
+    for iCol, width in column_widths.items():
+        sheet.column_dimensions[iCol].width = width
+    ''' 
+    # Adjusts column widths based on header length (+5)
+    for colI, header in enumerate(headers, start = 1):
+        colL = openpyxl.utils.get_column_letter(colI)
+        sheet.column_dimensions[colL].width = len(header) + 5
 
 # 6. Save the results
 myWorkbook.save(filename = "formatted_grades.xlsx")
