@@ -57,7 +57,19 @@ for className, sheet in subject_sheets.items():
     print(f"Applied filter to {className} sheet")
 
 # 4. Adding functions 
-pass
+for className, sheet in subject_sheets.items():
+    sheet["F1"] = "Summary Statistics"
+    sheet["F2"] = "Highest Grade"
+    sheet["F3"] = "Lowest Grade"
+    sheet["F4"] = "Mean Grade"
+    sheet["F5"] = "Median Grade"
+    sheet["F6"] = "Number of Students"
+    sheet["G1"] = "Value"
+    sheet["G2"] = "=MAX(D2:D41)"
+    sheet["G3"] = "=MIN(D2:D41)"
+    sheet["G4"] = "=AVERAGE(D2:D41)"
+    sheet["G5"] = "=MEDIAN(D2:D41)"
+    sheet["G6"] = "=COUNT(D2:D41)"
 
 # 5. Simple formatting
 pass
