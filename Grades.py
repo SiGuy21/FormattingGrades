@@ -80,6 +80,10 @@ for className, sheet in subject_sheets.items():
     for colI, header in enumerate(headers, start = 1):
         colL = openpyxl.utils.get_column_letter(colI)
         sheet.column_dimensions[colL].width = len(header) + 5
+        
+    # Make sure Columns F and G also gets their widths adjusted as well
+    sheet.column_dimensions["F"].width = 23
+    sheet.column_dimensions["G"].width = 10
 
 # 6. Save the results
 myWorkbook.save(filename = "formatted_grades.xlsx")
